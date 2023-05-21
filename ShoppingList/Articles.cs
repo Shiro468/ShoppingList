@@ -11,13 +11,22 @@ namespace ShoppingList
         public string NameOfThing;
         public int amount;
         public decimal price;
+        private decimal realPrice;
         public Articles() // Construct 
         {
             NameOfThing = "Not Define";
             amount = 0;
             price = 0;
+            if(amount > 1)
+            {
+                realPrice = this.RealPrice();
+            }
+            else
+            {
+                realPrice = price;
+            }
         }
-        public decimal Cena()
+        private decimal RealPrice()
         {
             decimal LastPrice;
             LastPrice = amount * price;
