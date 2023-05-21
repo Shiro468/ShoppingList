@@ -5,36 +5,21 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace ShoppingList
 {
-    public class ExampleList : Person
+    public class ExampleList
     {
-        //pole  Person  person1 
-        public int id;
-        public string FirstName;
-        public string LastName;
-        public string NameOfThing;
-        public  int amount;
-        public  decimal price;
+        public string? FirstName { get; init; }
+        public string? LastName { get; init; }
+        public string? NameOfList { get; init; }
+        public DateTime? LastDate { get; init; }
 
-        public ExampleList() 
+        public ExampleList(string firstName, string lastName , string nameOfList , DateTime created) 
         {
-            FirstName = "NOT DEFINE";
-            LastName = "NOT DEFINE";
-            NameOfThing = "NOT DEFINE";
-            amount = 0;
-            price = 0;
-            id = 0;
+            FirstName = firstName;
+            LastName = lastName;
+            NameOfList = nameOfList;
+            LastDate = created;
         }
-        /*
-        public void CreateMyList(string nameOfThing, int amount,decimal price)
-        {
-            ExampleList exampleList = new ExampleList();
-            exampleList.NameOfThing = nameOfThing;
-            exampleList.amount = amount;
-            exampleList.price = price;
-        }
-        */
     }
 }
