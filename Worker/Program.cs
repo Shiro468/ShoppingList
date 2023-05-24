@@ -10,29 +10,31 @@ bool back = false;
 WriteLine("Witaj w edytorze twojej Listy Zakupów");
 if (back == false)
 {
-    WriteLine("Podaj imie i nazwisko Właściciela Listy Zakupów , jak i nazwę listy Zakupów");
-    ExampleList myList = new(ReadLine(), ReadLine(), ReadLine(),DateTime.Now);
-    WriteLine($"Utworzono Listę {myList.FirstName} {myList.LastName} o nazwie {myList.NameOfList} dnia {myList.LastDate}");
- 
+        WriteLine("Podaj imie i nazwisko Właściciela Listy Zakupów , jak i nazwę listy Zakupów");
+        ExampleList myList = new(ReadLine(), ReadLine(), ReadLine(),DateTime.Now);
+        WriteLine($"Utworzono Listę {myList.FirstName} {myList.LastName} o nazwie {myList.NameOfList} dnia {myList.LastDate}");
+
         if (start == true)
         {
             WriteLine($"Podaj nazwę, ilość i cenę pierwszego artykułu");
             Articles articles1 = new Articles()
             {
-                NameOfThing = ReadLine(),
-                amount = int.Parse(ReadLine()),
-                price = int.Parse(ReadLine()),
+                //NameOfThing = ReadLine(),
+                //amount = int.Parse(ReadLine()),
+                //price = decimal.Parse(ReadLine()),
             };
+            articles1.CreateANewArticle();    
             WriteLine($"Stworzyłeś {articles1.NameOfThing} w ilości {articles1.amount} o kwocie {articles1.price}");
             WriteLine($"Czy chcesz dodać więcej artykułów do swojej listy ?");
             WriteLine($"Naciśnij y jeśli się zgadzasz naciśnij n jeśli chcesz zakończyć");
+
             if(ReadKey().Key == ConsoleKey.Y)
             {
-
+                start = true;
             }
             else if( ReadKey().Key == ConsoleKey.N)
             {
-
+                start = false;
             }
         }
 }
