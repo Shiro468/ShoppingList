@@ -19,6 +19,10 @@ namespace ShoppingList
             amount = 0;
             price =  price * amount;
         }
+        public decimal Cena()
+        {
+            price =  price * amount;
+        }
         public virtual void CreateANewArticle()
         {
             //Console.ReadLine() = NameOfThing;
