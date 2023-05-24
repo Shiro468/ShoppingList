@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace ShoppingList
 {
@@ -11,26 +12,19 @@ namespace ShoppingList
         public string NameOfThing;
         public int amount;
         public decimal price;
-        private decimal realPrice;
-        public Articles() // Construct 
+
+        public Articles()
         {
             NameOfThing = "Not Define";
             amount = 0;
-            price = 0;
-            if(amount > 1)
-            {
-                realPrice = this.RealPrice();
-            }
-            else
-            {
-                realPrice = price;
-            }
+            price = 0M;
         }
-        private decimal RealPrice()
+
+        public void SetArticleValues(string nameOfThing, int _amount,decimal _price)
         {
-            decimal LastPrice;
-            LastPrice = amount * price;
-            return LastPrice;
+            NameOfThing = nameOfThing;
+            amount = _amount;
+            price = _price;
         }
     }
 }
